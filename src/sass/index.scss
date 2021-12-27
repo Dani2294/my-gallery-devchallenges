@@ -1,0 +1,120 @@
+// Import Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+/* Import variables */
+@import 'variables';
+
+/* base & layout */
+@import 'base';
+@import 'layout';
+
+/* Main styles */
+
+/* HEADER */
+header {
+	text-align: center;
+	margin-bottom: 2.5rem;
+
+	.profile_picture {
+		max-width: 102px;
+		margin: 0 auto;
+		border-radius: 16px;
+	}
+
+	.profile_name {
+		font-size: 0.875rem;
+		margin: 0.625rem 0 0.25rem;
+	}
+
+	.profile_location {
+		font-size: 0.625rem;
+		color: $secondary;
+		margin-bottom: 0.75rem;
+	}
+
+	.profile_meta-data {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		max-width: 70%;
+		margin: 0 auto;
+
+		.pastil {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			padding: 0.75rem 0.35rem;
+			background-color: $pastil-bg;
+			border-radius: 12px;
+			font-size: 0.75rem;
+
+			.meta {
+				color: $tertiary;
+			}
+		}
+	}
+}
+
+/* IMGS GRID */
+.custom-grid {
+	.gallery-img {
+		filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.15));
+		border-radius: 12px;
+		height: 100%;
+		transition: transform 0.3s ease-in;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		&:nth-child(2) {
+			grid-column: span 2;
+		}
+		&:nth-child(3) {
+			grid-column: span 2;
+		}
+		&:nth-child(4) {
+			grid-row: span 2;
+		}
+	}
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 360px) {
+	header {
+		.profile_meta-data {
+			flex-wrap: nowrap;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	header {
+		margin-bottom: 3rem;
+
+		.profile_picture {
+			max-width: 156px;
+		}
+
+		.profile_name {
+			font-size: 1.5rem;
+		}
+
+		.profile_location {
+			font-size: 0.875rem;
+		}
+
+		.profile_meta-data {
+			gap: 1rem;
+			max-width: 45%;
+
+			.pastil {
+				font-size: 1.125rem;
+
+				.meta {
+					color: $tertiary;
+				}
+			}
+		}
+	}
+}

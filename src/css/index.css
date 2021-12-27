@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+/* Import variables */
+/* base & layout */
+/* Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* RESET STYLES */
+*, *::before, *::after { box-sizing: border-box; }
+
+* { margin: 0; }
+
+html, body { min-height: 100%; }
+
+body { font-family: "Montserrat", sans-serif; color: #4e5150; padding: 3rem 0; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+
+input, button, textarea, select { font: inherit; }
+
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+#root, #__next { isolation: isolate; }
+
+ul { padding: 0; list-style-type: none; }
+
+a { text-decoration: none; color: #fff; }
+
+hr { border: 0; border-top: 1px dotted #efefef; }
+
+.container { width: 100%; max-width: 900px; padding-inline: 0.75rem; margin: 0 auto; }
+
+.custom-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 0.75rem; }
+
+@media screen and (min-width: 768px) { .custom-grid { gap: 2rem; } }
+
+/* Main styles */
+/* HEADER */
+header { text-align: center; margin-bottom: 2.5rem; }
+
+header .profile_picture { max-width: 102px; margin: 0 auto; border-radius: 16px; }
+
+header .profile_name { font-size: 0.875rem; margin: 0.625rem 0 0.25rem; }
+
+header .profile_location { font-size: 0.625rem; color: #a9a9a9; margin-bottom: 0.75rem; }
+
+header .profile_meta-data { display: flex; flex-wrap: wrap; gap: 0.75rem; max-width: 70%; margin: 0 auto; }
+
+header .profile_meta-data .pastil { display: flex; flex-direction: column; width: 100%; padding: 0.75rem 0.35rem; background-color: #e5e5e5; border-radius: 12px; font-size: 0.75rem; }
+
+header .profile_meta-data .pastil .meta { color: #bdbdbd; }
+
+/* IMGS GRID */
+.custom-grid .gallery-img { filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.15)); border-radius: 12px; height: 100%; transition: transform 0.3s ease-in; }
+
+.custom-grid .gallery-img:hover { transform: scale(1.05); }
+
+.custom-grid .gallery-img:nth-child(2) { grid-column: span 2; }
+
+.custom-grid .gallery-img:nth-child(3) { grid-column: span 2; }
+
+.custom-grid .gallery-img:nth-child(4) { grid-row: span 2; }
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 360px) { header .profile_meta-data { flex-wrap: nowrap; } }
+
+@media screen and (min-width: 768px) { header { margin-bottom: 3rem; }
+  header .profile_picture { max-width: 156px; }
+  header .profile_name { font-size: 1.5rem; }
+  header .profile_location { font-size: 0.875rem; }
+  header .profile_meta-data { gap: 1rem; max-width: 45%; }
+  header .profile_meta-data .pastil { font-size: 1.125rem; }
+  header .profile_meta-data .pastil .meta { color: #bdbdbd; } }
